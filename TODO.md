@@ -23,16 +23,13 @@
 ## Technical TODOS
 - [x] Sette opp TypeScript i prosjektet
 - [x] Sette opp eslint og prettier med TypeScript med husky som kjører pre-commit-hook
-- [ ] Bestemme backend for lagring av data. 
-  - [ ] Vurder Firebase med Firebase Functions
+- [x] Bestemme backend for lagring av data. 
+  - [x] Vurder Firebase med Firebase Functions
     - Mulig en fordel mtp. erfaring, samt at det ser ut som at Firebase Storage Bucket kan brukes til å laste opp bilder.
-  - [ ] Vurder http://sanity.io
-    - Kanskje noen kommentarer etterpå :-) 
-  - [ ] Vurder egen GraphQL-tjeneste?
-  - [ ] Sjekk ut alternativer
+- [ ] Sette opp domenemodeller
 - [ ] Sette opp backend for lagring av data.
-- [ ] Finne tjeneste for å laste opp bilder til appen
-  - [ ] Firebase Storage Bucket?
+- [x] Finne tjeneste for å laste opp bilder til appen
+  - [x] Firebase Storage Bucket?
 - [ ] Sette opp Express.js-server i front som tar seg av kall til Firebase, andre API-er og miljøvariabler., 
 - [ ] Vurdere Server-side-rendering
   - [ ] Sjekke ut Gatsby

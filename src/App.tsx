@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.scss";
-import Spinner from "./components/spinner/Spinner";
-import ImageUploader from "./components/image-uploader/image-uploader";
+import RecipeImageUploader from "./components/image-uploader/recipe-image-uploader";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
         {/*<Spinner size="lg" />*/}
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
       </header>
-      <ImageUploader />
+      <RecipeImageUploader />
     </div>
   );
 }

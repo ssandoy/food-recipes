@@ -8,7 +8,7 @@ type Props = {
   imageHeight?: number;
 };
 
-export const ImageUploader: React.FC<Props> = ({ imageWidth = 300, imageHeight = 200 }: Props) => {
+export const RecipeImageUploader: React.FC<Props> = ({ imageWidth = 150, imageHeight = 200 }: Props) => {
   const [file, setFile] = useState<Blob>();
   const [fileName, setFileName] = useState<string>("");
   const [url, setImageUrl] = useState<string>();
@@ -56,4 +56,4 @@ export const ImageUploader: React.FC<Props> = ({ imageWidth = 300, imageHeight =
   );
 };
 
-export default ImageUploader;
+export default RecipeImageUploader;

@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { getRecipeImageUrlPromise, uploadRecipeImage } from "../../firebase/storage";
+import { getRecipeImageUrlPromise, uploadImage } from "../../firebase/storage";
 
 import "./styles.scss";
 
 type Props = {
+  imageFirebaseRefName: string;
   imageWidth?: number;
   imageHeight?: number;
 };
 
-export const RecipeImageUploader: React.FC<Props> = ({ imageWidth = 150, imageHeight = 200 }: Props) => {
+export const ImageUploader: React.FC<Props> = ({
+  imageFirebaseRefName,
+  imageWidth = 150,
+  imageHeight = 200,
+}: Props) => {
   const [file, setFile] = useState<Blob>();
   const [fileName, setFileName] = useState<string>("");
   const [url, setImageUrl] = useState<string>();
-  const [recipePlaceholder, setRecipePlaceholder] = useState<string>("");
+  const [imagePlaceHolder, setImagePlaceHolder] = useState<string>("");
+
+  const fetchImageUrl = async () => {
+    const recipePlaceHolderUrl = await getRecipeImageUrlPromise("recipe-placeholder.png");
+    setImagePlaceHolder(recipePlaceHolderUrl);
+  };
 
   useEffect(() => {
-    const fetchImageUrl = async () => {
-      const recipePlaceHolderUrl = await getRecipeImageUrlPromise("recipe-placeholder.png");
-      setRecipePlaceholder(recipePlaceHolderUrl);
-    };
     fetchImageUrl();
   }, []);
 
   const handleUpload = async () => {
     if (file) {
-      const uploadURL = await uploadRecipeImage("testname.jpg", file);
+      const uploadURL = await uploadImage(imageFirebaseRefName, "testname.jpg", file);
       setImageUrl(uploadURL);
     }
   };
@@ -32,7 +38,7 @@ export const RecipeImageUploader: React.FC<Props> = ({ imageWidth = 150, imageHe
   return (
     <div className="image-uploader-container">
       <h2>Test Image Uploader</h2>
-      <img src={url || recipePlaceholder} alt="Uploaded Images" height={imageHeight} width={imageWidth} />
+      <img src={url || imagePlaceHolder} alt="Uploaded Images" height={imageHeight} width={imageWidth} />
       <div className="image-uploader-file-input">
         <label htmlFor="file-upload">
           Last opp bilde
@@ -56,4 +62,4 @@ export const RecipeImageUploader: React.FC<Props> = ({ imageWidth = 150, imageHe
   );
 };
 
-export default RecipeImageUploader;
+export default ImageUploader;

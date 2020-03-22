@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
-import RecipeImageUploader from "./components/image-uploader/recipe-image-uploader";
+import ImageUploader from "./components/image-uploader/image-uploader";
+import { RECIPE_IMAGEREF_NAME } from "./firebase/storage";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         {/*<Spinner size="lg" />*/}
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
       </header>
-      <RecipeImageUploader />
+      <ImageUploader imageFirebaseRefName={RECIPE_IMAGEREF_NAME} />
     </div>
   );
 }

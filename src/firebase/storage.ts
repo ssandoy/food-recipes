@@ -2,10 +2,12 @@ import { storage } from "./firebase-setup";
 
 const storageRef = storage.ref();
 
-const recipeImageRef = storageRef.child("recipe-images");
+export const RECIPE_IMAGEREF_NAME = "recipe-images";
+const recipeImageRef = storageRef.child(RECIPE_IMAGEREF_NAME);
 
-export const uploadRecipeImage = (filename: string, image: Blob): Promise<string> => {
-  const uploadRef = recipeImageRef.child(filename);
+export const uploadImage = (imageRefName: string, filename: string, image: Blob): Promise<string> => {
+  const imageRef = storageRef.child(imageRefName);
+  const uploadRef = imageRef.child(filename);
   const imageUrl = uploadRef.put(image).then(
     success => {
       return success.ref.getDownloadURL();

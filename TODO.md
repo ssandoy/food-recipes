@@ -26,7 +26,7 @@
 - [x] Bestemme backend for lagring av data. 
   - [x] Vurder Firebase med Firebase Functions
     - Mulig en fordel mtp. erfaring, samt at det ser ut som at Firebase Storage Bucket kan brukes til å laste opp bilder.
-- [ ] Sette opp domenemodeller
+- [x] Sette opp domenemodeller
 - [ ] Sette opp backend for lagring av data.
 - [x] Finne tjeneste for å laste opp bilder til appen
   - [x] Firebase Storage Bucket?

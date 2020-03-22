@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.image-uploader {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-file-input {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    margin: 10px 0;
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      font-size: $button-font-size;
+      color: $button-text-color;
+      // TODO SET BACKGROUND-COLOR.
+      height: 100%;
+      padding: 4px 16px;
+      border-radius: $button-border-radius;
+      border-color: transparent;
+      cursor: pointer;
+    }
+  }
+}

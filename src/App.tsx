@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Spinner size="lg" />
+        {/*<Spinner size="lg" />*/}
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
       </header>
       <ImageUploader />

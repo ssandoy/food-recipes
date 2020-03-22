@@ -1,9 +1,26 @@
-import React, { useState } from "react";
-import { uploadRecipeImage } from "../../firebase/storage";
+import React, { useEffect, useState } from "react";
+import { getRecipeImageUrlPromise, uploadRecipeImage } from "../../firebase/storage";
 
-export const ImageUploader = () => {
+import "./styles.scss";
+
+type Props = {
+  imageWidth?: number;
+  imageHeight?: number;
+};
+
+export const ImageUploader: React.FC<Props> = ({ imageWidth = 300, imageHeight = 200 }: Props) => {
   const [file, setFile] = useState<Blob>();
+  const [fileName, setFileName] = useState<string>("");
   const [url, setImageUrl] = useState<string>();
+  const [recipePlaceholder, setRecipePlaceholder] = useState<string>("");
+
+  useEffect(() => {
+    const fetchImageUrl = async () => {
+      const recipePlaceHolderUrl = await getRecipeImageUrlPromise("recipe-placeholder.png");
+      setRecipePlaceholder(recipePlaceHolderUrl);
+    };
+    fetchImageUrl();
+  }, []);
 
   const handleUpload = async () => {
     if (file) {
@@ -13,27 +30,28 @@ export const ImageUploader = () => {
   };
 
   return (
-    <div>
+    <div className="image-uploader-container">
       <h2>Test Image Uploader</h2>
-      <div></div>
-      <div>
-        <div>
-          <span>File</span>
+      <img src={url || recipePlaceholder} alt="Uploaded Images" height={imageHeight} width={imageWidth} />
+      <div className="image-uploader-file-input">
+        <label htmlFor="file-upload">
+          Last opp bilde
+          {fileName && <p>{fileName}</p>}
           <input
+            className="image-uploader-file-input"
+            id="file-upload"
             type="file"
+            accept="image/*;capture=camera"
             onChange={event => {
               if (event.target?.files?.[0]) {
-                setFile(event.target.files[0]);
+                setFile(event.target.files?.[0]);
+                setFileName(event.target.files?.[0].name);
               }
             }}
           />
-        </div>
-        <div>
-          <input />
-        </div>
+        </label>
+        <button onClick={handleUpload}>Upload</button>
       </div>
-      <button onClick={handleUpload}>Upload</button>
-      <img src={url || "https://via.placeholder.com/400x300"} alt="Uploaded Images" height="300" width="400" />
     </div>
   );
 };

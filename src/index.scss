@@ -1,13 +1,27 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
 body {
   margin: 0;
+  // font-family: HelveticaNeue, serif;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+button {
+  font-size: $button-font-size;
+  color: $button-text-color;
+  // TODO SET BACKGROUND-COLOR.
+  height: 100%;
+  padding: 4px 16px;
+  border-radius: $button-border-radius;
+  border-color: transparent;
 }

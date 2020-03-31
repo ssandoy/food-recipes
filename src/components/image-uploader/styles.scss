@@ -10,7 +10,9 @@
 
   &-file-input {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     width: 300px;
     margin: 10px 0;
     input[type="file"] {
@@ -20,7 +22,6 @@
     label {
       font-size: $button-font-size;
       color: $button-text-color;
-      // TODO SET BACKGROUND-COLOR.
       height: 100%;
       padding: 4px 16px;
       border-radius: $button-border-radius;

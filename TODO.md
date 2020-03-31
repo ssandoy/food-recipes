@@ -28,6 +28,8 @@
     - Mulig en fordel mtp. erfaring, samt at det ser ut som at Firebase Storage Bucket kan brukes til å laste opp bilder.
 - [x] Sette opp domenemodeller
 - [ ] Sette opp backend for lagring av data.
+   - [ ] Sjekke ut Firebase Functions
+      - [] Er dette noedvendig?
 - [x] Finne tjeneste for å laste opp bilder til appen
   - [x] Firebase Storage Bucket?
 - [ ] Sette opp Express.js-server i front som tar seg av kall til Firebase, andre API-er og miljøvariabler., 

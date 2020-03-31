@@ -1,0 +1,23 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.recipe-uploader {
+  display: grid;
+  // TODO
+  @include for-phone-only {
+    // TODO
+  }
+
+  &__title {
+
+  }
+
+  &__input-title {
+    font-size: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+
+  &__item-containers {
+  }
+}

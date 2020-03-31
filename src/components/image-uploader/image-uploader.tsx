@@ -4,12 +4,14 @@ import { getRecipeImageUrlPromise, uploadImage } from "../../firebase/storage";
 import "./styles.scss";
 
 type Props = {
+  title?: string;
   imageFirebaseRefName: string;
   imageWidth?: number;
   imageHeight?: number;
 };
 
 export const ImageUploader: React.FC<Props> = ({
+  title = "Last opp bilde",
   imageFirebaseRefName,
   imageWidth = 150,
   imageHeight = 200,
@@ -37,11 +39,10 @@ export const ImageUploader: React.FC<Props> = ({
 
   return (
     <div className="image-uploader-container">
-      <h2>Test Image Uploader</h2>
-      <img src={url || imagePlaceHolder} alt="Uploaded Images" height={imageHeight} width={imageWidth} />
+      <h2>{title}</h2>
       <div className="image-uploader-file-input">
         <label htmlFor="file-upload">
-          Last opp bilde
+          <img src={url || imagePlaceHolder} alt="Uploaded Images" height={imageHeight} width={imageWidth} />
           {fileName && <p>{fileName}</p>}
           <input
             className="image-uploader-file-input"
@@ -56,7 +57,7 @@ export const ImageUploader: React.FC<Props> = ({
             }}
           />
         </label>
-        <button onClick={handleUpload}>Upload</button>
+        <button onClick={handleUpload}>Last opp</button>
       </div>
     </div>
   );

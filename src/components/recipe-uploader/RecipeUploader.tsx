@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { RECIPE_IMAGEREF_NAME } from "../../firebase/storage";
 
 import "./styles.scss";
-import ImageUploader from "../image-uploader/image-uploader";
-import ItemContainer from "./item-container/item-container";
+import ImageUploader from "../image-uploader/ImageUploader";
+import ItemContainer from "./item-container/ItemContainer";
 import Item from "../../models/item";
 import { nanoid } from "nanoid";
 

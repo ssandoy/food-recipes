@@ -2,13 +2,12 @@
 @import "styles/mixins.scss";
 
 body {
+  background: radial-gradient(circle, #2e3b4c, #313e50,#2f3a4a,  #232a37);
   margin: 0;
-  //font-family: HelveticaNeue, serif;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  font-family: FuturaCondensedBold, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
 }
 
 code {
@@ -35,6 +34,6 @@ input {
 
 
 @font-face {
-  font-family: HelveticaNeue;
-  src: url("./fonts/HelveticaNeue Light.ttf");
+  font-family: FuturaCondensedBold;
+  src: url("./fonts/Futura Condensed Bold.otf");
 }

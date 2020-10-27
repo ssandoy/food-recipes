@@ -66,5 +66,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-typescript-prettier": "^3.1.0"
   }
 }
